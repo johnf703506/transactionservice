@@ -17,8 +17,3 @@ springdoc:
     path: /openapi.json
   swagger-ui:
     path: /swagger-ui.html
-
-
-# Run the job at 1am every day
-treasury:
-  refresh-cron: "0 0 1 * * *"
