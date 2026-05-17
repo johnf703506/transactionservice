@@ -15,7 +15,7 @@
 
 ## Other Notes
 
-- I added an endpoint to refresh the currency rates.  For a production system I would create a CRON job that would updated these daily.  I would also cache this data instead of calling the database each REST call.
+- The treasury data is loaded the first time the application is run.  I added an endpoint to refresh the currency rates.  For a production system I would create a CRON job that would updated these daily.  I would also cache this data instead of calling the database each REST call.
 - I did not put any security on the endpoints which would be different 
 - If running in docker, the data is persisted if the container is stopped and restarted.  I did not mount anything to the container so it would be persisted outside the container to handle the situatuon where the container is deleted.  
 - H2 DB console is available at http://localhost:8080//h2-console when running locally, user sa, empty password.
