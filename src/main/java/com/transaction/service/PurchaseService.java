@@ -40,6 +40,12 @@ public class PurchaseService {
         return purchaseRepository.save(purchaseTransaction);
     }
 
+
+    public BigDecimal getTotals (int year, int month ) {
+
+        return purchaseRepository.findTotalsByMonth(year, month);
+    }
+
     public PurchaseResponse getConverted(String id, String currencyCode) {
 
         PurchaseTransaction purchaseTransaction = purchaseRepository.findById(id.strip())

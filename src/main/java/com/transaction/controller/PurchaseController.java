@@ -9,6 +9,8 @@ import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
+
 @RestController
 @RequestMapping("/purchases")
 public class PurchaseController {
@@ -38,4 +40,11 @@ public class PurchaseController {
                                 @RequestParam String currency) {
         return service.getConverted(id, currency);
     }
+
+    @GetMapping("/totals")
+    public BigDecimal getTotalForMonth(@RequestParam int year, @RequestParam int month
+                                ) {
+        return service.getTotals(year, month);
+    }
+
 }
